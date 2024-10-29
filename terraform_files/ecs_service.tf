@@ -12,7 +12,7 @@ resource "aws_ecs_service" "app_service" {
   }
 
   network_configuration {
-    subnets          = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]
+    subnets          = [aws_subnet.public-subnet-1.id, aws_subnet.public-subnet-2.id]
     assign_public_ip = true
     security_groups  = [aws_security_group.sg1.id]
   }

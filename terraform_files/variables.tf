@@ -1,10 +1,3 @@
-variable "ami" {
-  description = "AMI_id for ubuntu EC2 instance"
-}
-variable "instance_type" {
-  description = "Type of EC2 instance"
-  default     = "t2.micro"
-}
 variable "profile" {
   description = "profile configured using aws creds"
 }
@@ -17,9 +10,6 @@ variable "subnet_az1" {
 variable "subnet_az2" {
   description = "AZ 1b with the Region"
 }
-variable "key_name" {
-  description = "Value for rsa key pair"
-}
 variable "security_group" {
   description = "aws security group name"
 }
@@ -27,9 +17,35 @@ variable "vpc_cidr" {
   description = "value of subnet cidr"
   default     = "10.0.0.0/16"
 }
-variable "subnet1_cidr" {
-  description = "value of cider for subnet 1a"
+variable "public-subnet-1" {
+  description = "value of cider for public-subnet-1"
 }
-variable "subnet2_cidr" {
-  description = "value of cider for subnet 1b"
+variable "private-subnet-1" {
+  description = "value of cider for private-subnet-1"
+}
+variable "public-subnet-2" {
+  description = "value of cider for public-subnet-2"
+}
+variable "private-subnet-2" {
+  description = "value of cider for private-subnet-2"
+}
+variable "db_username" {
+  description = "The database admin username"
+  type        = string
+}
+
+variable "db_password" {
+  description = "The database admin password"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_name" {
+  description = "The name of the database"
+  type        = string
+}
+
+variable "cloudwatch_group" {
+  description = "cloudwatch for logs"
+  type        = string
 }
